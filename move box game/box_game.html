@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this is box js code</title>
+    <style>
+       
+        body{
+            background-color: pink;
+        }
+        #container{
+            margin: auto;
+            position: relative;
+            background-color: blue;
+            height: 200px;
+            width: 200px;
+        }
+        .but{
+            position: fixed;
+            display: flex;
+            bottom: 20px;
+            width: 100%;
+            justify-content: center;
+        }
+        .but button{
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <div class="but">
+        <button onclick="move('left')">Left</button>
+        <button onclick="move('right')">Right</button>
+        <button onclick="move('up')">up</button>
+        <button onclick="move('down')">Down</button>
+    </div>
+
+   <script>
+    var x=50;
+    var y=50;
+    var step=50;
+    var element=document.getElementById("container");
+    function move(direction){
+        
+        if(direction==='up'){
+            y-=step;
+        }
+        if(direction==='down'){
+            y+=step;
+        }
+        if(direction==='left'){
+            x-=step
+        }
+        if(direction==='right'){
+            x+=step;
+        }
+        element.style.transform=`translate(${x}px,${y}px)`;
+    }
+   </script>
+</body>
+</html>
